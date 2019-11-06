@@ -7,9 +7,10 @@ import cutText from './PostSummaryContainer';
 import { Link } from 'react-router-dom';
 import './PostSummary.scss';
 
-const PostSummary = ({ id, title, content }) => (
+const PostSummary = ({ id, title, content, author }) => (
     <article className='post-summary'>
         <SmallTitle>{title}</SmallTitle>
+        <p>Author: {author}</p>
         <HtmlBox>{cutText(content, 250)}</HtmlBox>
         <Button variant='primary'>
             <Link to={`/posts/${id}`}>Read more</Link>
@@ -18,9 +19,10 @@ const PostSummary = ({ id, title, content }) => (
 );
 
 PostSummary.propTypes = {
-    id: PropTypes.string,
-    title: PropTypes.string,
-    content: PropTypes.string,
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired
 };
 
 export default PostSummary;

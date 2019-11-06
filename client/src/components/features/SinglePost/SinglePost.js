@@ -28,6 +28,7 @@ class SinglePost extends React.Component {
                 <div>
                     <article className='post-summary'>
                         <SmallTitle>{singlePost.title}</SmallTitle>
+                        <p>Author: {singlePost.author}</p>
                         <HtmlBox>{singlePost.content}</HtmlBox>
                     </article>
                 </div>
@@ -62,6 +63,7 @@ SinglePost.propTypes = {
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         content: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired
     }),
     loadSinglePost: PropTypes.func.isRequired
 };
